@@ -7,7 +7,7 @@ const updateMainJS = (entry) => {
 
   // check existing imports & apply if needed
   if (lines.findIndex(line => line.match(/mdb-vue-ui-kit/)) < 0) {
-    lines.unshift("import 'mdb-vue-ui-kit/css/mdb-vue-ui-kit.min.css'")
+    lines.unshift("import 'mdb-vue-ui-kit/css/mdb.min.css'")
   }
 
   fs.writeFileSync(entry, lines.join(EOL), { encoding: 'utf-8' })
