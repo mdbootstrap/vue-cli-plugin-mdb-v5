@@ -2,8 +2,13 @@ const updateMainJS = require('./commands/updateMainJS')
 const applyRoboto = require('./commands/applyRoboto')
 const applyFA5 = require('./commands/applyFA5')
 
+const remoteGitTags = require('remote-git-tags')
+
 // check for the latest mdb version
 let latestTag = '1.0.0-alpha1'
+remoteGitTags('https://github.com/mdbootstrap/mdb-vue-ui-kit').then(tags => {
+  latestTag = Array.from(tags)[Array.from(tags).length - 1][0];
+})
 
 module.exports = async (api, options) => {
   // extend existing config
