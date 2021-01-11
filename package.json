@@ -13,7 +13,6 @@
   "dependencies": {
     "fs-extra": "^9.0.1",
     "npm-packlist": "^2.1.4",
-    "remote-git-tags": "^3.0.0",
     "replace-in-file": "^6.1.0",
     "tar": "^6.0.5"
   }
