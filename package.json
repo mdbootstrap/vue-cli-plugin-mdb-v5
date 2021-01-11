@@ -1,5 +1,5 @@
 {
-  "name": "vue-cli-plugin-mdb-v5",
+  "name": "vue-cli-plugin-mdb5",
   "version": "1.0.0",
   "description": "MDB5 Vue CLI Plugin",
   "main": "index.js",
@@ -7,9 +7,9 @@
   "license": "MIT",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/mdbootstrap/vue-cli-plugin-mdb-v5.git"
+    "url": "git+https://github.com/mdbootstrap/vue-cli-plugin-mdb5.git"
   },
-  "homepage": "https://github.com/mdbootstrap/vue-cli-plugin-mdb-v5#readme",
+  "homepage": "https://github.com/mdbootstrap/vue-cli-plugin-mdb5#readme",
   "dependencies": {
     "fs-extra": "^9.0.1",
     "npm-packlist": "^2.1.4",
