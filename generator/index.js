@@ -1,14 +1,14 @@
 const updateMainJS = require("./commands/updateMainJS");
 const applyRoboto = require("./commands/applyRoboto");
-const applyFA5 = require("./commands/applyFA5");
+const applyFA6 = require("./commands/applyFA6");
 const packTgz = require("./commands/packTgz");
 const applySCSS = require("./commands/applySCSS");
 
 const remoteGitTags = require("remote-git-tags");
 
 // check for the latest mdb version
-let latestTag = "1.0.0-alpha1";
-remoteGitTags("https://github.com/mdbootstrap/mdb-vue-ui-kit").then(tags => {
+let latestTag = "3.0.0";
+remoteGitTags("https://github.com/mdbootstrap/mdb-vue-ui-kit").then((tags) => {
   latestTag = Array.from(tags)[Array.from(tags).length - 1][0];
 });
 
@@ -17,21 +17,21 @@ module.exports = async (api, options) => {
   if (options.version === "Free") {
     api.extendPackage({
       scripts: {
-        start: "vue-cli-service serve --open"
+        start: "vue-cli-service serve --open",
       },
       dependencies: {
-        "mdb-vue-ui-kit": `^${latestTag}`
-      }
+        "mdb-vue-ui-kit": `^${latestTag}`,
+      },
     });
   } else {
     api.render("./templates/pro");
     api.extendPackage({
       scripts: {
-        start: "vue-cli-service serve --open"
+        start: "vue-cli-service serve --open",
       },
       dependencies: {
-        "mdb-vue-ui-kit": `git+https://oauth2:${options.token}@git.mdbootstrap.com/mdb/vue/mdb5/prd/mdb5-vue-ui-kit-pro-essential.git`
-      }
+        "mdb-vue-ui-kit": `git+https://oauth2:${options.token}@git.mdbootstrap.com/mdb/vue/mdb5/prd/mdb5-vue-ui-kit-pro-essential.git`,
+      },
     });
   }
 
@@ -45,7 +45,7 @@ module.exports = async (api, options) => {
   // apply Font Awesome
   if (options.fa5 === true) {
     api.onCreateComplete(() => {
-      applyFA5();
+      applyFA6();
     });
   }
 
@@ -59,8 +59,8 @@ module.exports = async (api, options) => {
     api.extendPackage({
       devDependencies: {
         sass: "^1.26.5",
-        "sass-loader": "^8.0.2"
-      }
+        "sass-loader": "^8.0.2",
+      },
     });
     api.onCreateComplete(() => {
       applySCSS(options.version);

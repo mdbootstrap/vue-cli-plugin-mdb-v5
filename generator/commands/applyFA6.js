@@ -8,7 +8,7 @@ const indexFileUpdate = () => {
   const styleIndex = lines.findIndex(line => line.match(/<link/))
 
   if (lines.findIndex(line => line.match(/use.fontawesome.com/)) < 0) {
-    lines[styleIndex] += `${EOL}    <link href="https://use.fontawesome.com/releases/v5.15.1/css/all.css" rel="stylesheet" />`
+    lines[styleIndex] += `${EOL}    <link href="https://use.fontawesome.com/releases/v6.2.1/css/all.css" rel="stylesheet" />`
   }
 
   fs.writeFileSync('./public/index.html', lines.join(EOL), { encoding: 'utf-8' })
