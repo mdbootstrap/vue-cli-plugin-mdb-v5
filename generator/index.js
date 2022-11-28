@@ -16,9 +16,6 @@ module.exports = async (api, options) => {
   // extend existing config
   if (options.version === "Free") {
     api.extendPackage({
-      scripts: {
-        start: "vue-cli-service serve --open",
-      },
       dependencies: {
         "mdb-vue-ui-kit": `^${latestTag}`,
       },
@@ -26,9 +23,6 @@ module.exports = async (api, options) => {
   } else {
     api.render("./templates/pro");
     api.extendPackage({
-      scripts: {
-        start: "vue-cli-service serve --open",
-      },
       dependencies: {
         "mdb-vue-ui-kit": `git+https://oauth2:${options.token}@git.mdbootstrap.com/mdb/vue/mdb5/prd/mdb5-vue-ui-kit-pro-essential.git`,
       },
