@@ -1,4 +1,4 @@
-const isPro = answers => {
+const isPro = (answers) => {
   return answers.version === "Pro";
 };
 
@@ -8,25 +8,25 @@ module.exports = [
     type: "list",
     message: "Free or Pro version?",
     choices: ["Free", "Pro"],
-    default: "Free"
+    default: "Free",
   },
   {
     name: "token",
     type: "input",
     message: "Please enter your gitlab token:",
-    when: isPro
+    when: isPro,
   },
   {
     name: "roboto",
     type: "confirm",
     message: "Add Roboto font?",
-    default: true
+    default: true,
   },
   {
-    name: "fa5",
+    name: "fa6",
     type: "confirm",
-    message: "Add Font Awesome 5?",
-    default: true
+    message: "Add Font Awesome 6?",
+    default: true,
   },
   {
     name: "styling",
@@ -34,14 +34,14 @@ module.exports = [
     message: "Select the styling option:",
     choices: [
       "Compiled in the package (CSS)",
-      "Editable in your project (SCSS)"
+      "Editable in your project (SCSS)",
     ],
-    default: "Compiled in the package (CSS)"
+    default: "Compiled in the package (CSS)",
   },
   {
     name: "welcomePage",
     type: "confirm",
     message: "Add MDB welcome page?",
-    default: true
-  }
+    default: true,
+  },
 ];

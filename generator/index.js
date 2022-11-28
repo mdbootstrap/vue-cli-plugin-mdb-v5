@@ -43,7 +43,7 @@ module.exports = async (api, options) => {
   }
 
   // apply Font Awesome
-  if (options.fa5 === true) {
+  if (options.fa6 === true) {
     api.onCreateComplete(() => {
       applyFA6();
     });
